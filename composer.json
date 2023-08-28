@@ -1,0 +1,19 @@
+{
+    "name": "jmalko/cf-stream",
+    "autoload": {
+        "psr-4": {
+            "Jmalko\\CfStream\\": "src"
+        }
+    },
+    "extra": {
+        "statamic": {
+            "name": "Cf Stream",
+            "description": "Cf Stream addon"
+        },
+        "laravel": {
+            "providers": [
+                "Jmalko\\CfStream\\ServiceProvider"
+            ]
+        }
+    }
+}
