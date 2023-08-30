@@ -8,41 +8,44 @@
 
     <button type="button" id="uppy-select-files" class="btn btn-primary" >Upload videos</button>
 
-      <link href="https://releases.transloadit.com/uppy/v3.14.1/uppy.min.css" rel="stylesheet" />    
+      <link href="https://releases.transloadit.com/uppy/v3.14.1/uppy.min.css" rel="stylesheet" />
 
-      <div id="uppy"></div>    
+      <div id="uppy"></div>
 
-      <script type="module">    
-          import {    
-              Uppy,    
-              Tus,    
+      <script type="module">
+          import {
+              Uppy,
+              Tus,
               Dashboard,
-          } from 'https://releases.transloadit.com/uppy/v3.14.1/uppy.min.mjs';    
-                                                    
-          const uppy = new Uppy( 
+          } from 'https://releases.transloadit.com/uppy/v3.14.1/uppy.min.mjs';
+
+          const uppy = new Uppy(
           {
-            restrictions: { 
-                allowedFileTypes: ['video/*'] 
+            restrictions: {
+                allowedFileTypes: ['video/*']
             }
           }
-          );    
-                                                    
-          uppy    
-              .use(Dashboard, { 
-                  target: '#uppy', 
-                  inline: false, 
-                  trigger: '#uppy-select-files', 
+          );
+
+          uppy
+              .use(Dashboard, {
+                  target: '#uppy',
+                  inline: false,
+                  trigger: '#uppy-select-files',
                   height: 300
-              })    
-              .use(Tus, { 
-                  endpoint: '/!/cf-stream/upload', 
+              })
+              .use(Tus, {
+                  endpoint: '/!/cf-stream/upload',
                   chunkSize: 150 * 1024 * 1024
-              })    
-                                                    
+              })
+
       </script>
 
       <h2 class="mt-12 mb-4" >Uploaded videos</h2>
       <div class="grid" style="gap: 1rem; ">
+        @if(!$videos)
+            <p>No videos uploaded yet.</p>
+        @else
           @foreach($videos as $video)
             <div class="card flex" style="gap: 1rem;">
                 <div class="card-image">
@@ -56,5 +59,6 @@
                 </div>
             </div>
           @endforeach
+          @endif
       </div>
 @endsection
