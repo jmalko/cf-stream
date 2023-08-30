@@ -62,7 +62,7 @@ class ServiceProvider extends AddonServiceProvider
                 } else {
                     $response = json_decode($response, true);
 
-                    $videos = $response['result'];
+                    $videos = $response['result'] ?? [];
 
                     return view("cf-stream::index", compact('videos'));
                 }

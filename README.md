@@ -2,6 +2,10 @@
 
 > Upload, embed, and manage Cloudflare Stream videos from your CP.
 
+Demo and `.env` setup instructions here - be up and running in less than 60 seconds!
+
+[Click to see short video on Loom](https://www.loom.com/share/30ee4efe1ab7436188411390c2fa3807?sid=9c3e3361-3519-48c9-9ec5-fd2a56cc19d6)
+
 ## THIS IS A WORKING ADDON, BUT BIG CHANGES AUG/SEPT 2023 MAY BREAK WITH UPDATES
 
 Please try this out, but be watchful when you `composer update` till I say.
